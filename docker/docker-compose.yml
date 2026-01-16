@@ -196,7 +196,7 @@ services:
   # Remove this service if you want to use an external Redis/Valkey instance
   redis:
     restart: always
-    image: valkey/valkey@sha256:12ba4f45a7c3e1d0f076acd616cb230834e75a77e8516dde382720af32832d6d
+    image: valkey/valkey
     command: valkey-server --appendonly yes
     volumes:
       - redisx:/data
