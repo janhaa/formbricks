@@ -186,7 +186,7 @@ services:
     restart: always
     image: pgvector/pgvector:pg17
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - postgresx:/var/lib/postgresql/data
     environment:
       # Postgres DB Super User Password
       # Replace the below with your own secure password & Make sure the password matches the password field in DATABASE_URL above
@@ -199,7 +199,7 @@ services:
     image: valkey/valkey@sha256:12ba4f45a7c3e1d0f076acd616cb230834e75a77e8516dde382720af32832d6d
     command: valkey-server --appendonly yes
     volumes:
-      - redis:/data
+      - redisx:/data
     #ports:
     #  - "6379:6379"
 
@@ -216,7 +216,7 @@ services:
     <<: *environment
 
 volumes:
-  postgres:
+  postgresx:
     driver: local
-  redis:
+  redisx:
     driver: local
