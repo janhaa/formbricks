@@ -4,10 +4,19 @@ x-environment: &environment
 
     # The url of your Formbricks instance used in the admin panel
     # Set this to your public-facing URL, e.g., https://example.com
-    WEBAPP_URL:
+    WEBAPP_URL: https://formbricks.jhaus.dev
 
     # Required for next-auth. Should be the same as WEBAPP_URL
-    NEXTAUTH_URL:
+    NEXTAUTH_URL: https://formbricks.jhaus.dev
+
+    # NEXTAUTH secret (forwarded from host environment)
+    NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+
+    # Encryption key used by the app (forwarded from host environment)
+    ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+
+    # CRON secret used for scheduled tasks (forwarded from host environment)
+    CRON_SECRET: ${CRON_SECRET}
 
     # PostgreSQL DB for Formbricks to connect to
     DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/formbricks?schema=public"
