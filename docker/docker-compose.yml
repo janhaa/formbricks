@@ -219,6 +219,7 @@ services:
       - ./saml-connection:/home/nextjs/apps/web/saml-connection
     networks:
       - dokploy-network
+    <<: *environment 
 
 volumes:
   postgresx:
